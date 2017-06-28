@@ -40,5 +40,5 @@ set autoindent
 " coming from other editors would expect.
 set nostartofline
 
-
+set relativenumber
 set number
