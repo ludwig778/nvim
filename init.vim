@@ -1,44 +1,71 @@
 call plug#begin('~/.vim/plugged')
 
-" Status Bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/syntastic'
+Plug 'valloric/youcompleteme'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/Conque-Shell'
 
 call plug#end()
 
+let mapleader="\<Space>"
+
+" NERD TREE
+function Nerd()
+    if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+	if bufwinnr(t:NERDTreeBufName) == winnr()
+	    :NERDTreeClose
+	else
+	    :NERDTreeFocus
+	endif
+    else
+	":NERDTreeTabsOpen
+	:NERDTree
+    endif
+endfunction
+nnoremap <leader>a :call Nerd()<cr>
+
+set tags=~/.tags
 
 
-let g:airline_theme='powerlineish'
-" let g:airline_left_sep='>'
-" let g:airline_right_sep='<'
-let g:airline_powerline_fonts = 1
 
-let mapleader=" "
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
+nnoremap <leader>s :w<CR>
+nnoremap <leader>d yyp
+nnoremap <leader>t :tabe<CR>
+nnoremap <leader>z :TagbarToggle<CR>
+nnoremap <leader>u :PlugUpdate<CR>
+nnoremap <leader>U :PlugUpgrade<CR>
 
-nnoremap <leader>i :NERDTreeTabsToggle<cr>
-" Indentation settings for using 4 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
-
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
-
-" When opening a new line and no filetype-specific indenting is enabled, keep
-" the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
-
-" Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
-set nostartofline
-
+"set number
 set relativenumber
-set number
+set smartindent
+set autoindent
+set ruler     
+syntax on
+
+" SYNTASTIC
+nnoremap <F2> :SyntasticCheck<CR>
+nnoremap <F3> :SyntasticToggle<CR>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
+
+" YOU COMPLETE ME
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+
+":nnoremap <leader>q :q<Esc>
+":nnoremap <leader>Q :q!<Esc>
+":nnoremap <leader>s :w<Esc>
+"
+"
