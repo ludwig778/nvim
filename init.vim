@@ -63,7 +63,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
 
 " YOU COMPLETE ME
+"let g:ycm_autoclose_preview_window_after_completion=1
+set completeopt-=preview
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_stop_completion = ['\<C-c>']
 
 ":nnoremap <leader>q :q<Esc>
 ":nnoremap <leader>Q :q!<Esc>
