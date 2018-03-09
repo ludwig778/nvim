@@ -69,3 +69,25 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 ":nnoremap <leader>s :w<Esc>
 "
 "
+"" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs
+set smarttab
+
+" 1 tab == 4 spaces
+"set shiftwidth=4
+"set tabstop=4
+
+" Linebreak on 500 characters
+"set lbr
+"set tw=500
+
+" Auto indent
+set ai
+
+" Smart indent
+set si
+
+" Wrap lines
+set wrap
