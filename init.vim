@@ -95,3 +95,21 @@ set si
 
 " Wrap lines
 set wrap
+
+nnoremap <leader>& 1gt<CR>
+nnoremap <leader>é 2gt<CR>
+nnoremap <leader>" 3gt<CR>
+nnoremap <leader>' 4gt<CR>
+nnoremap <leader>( 5gt<CR>
+nnoremap <leader>- 6gt<CR>
+nnoremap <leader>è 7gt<CR>
+nnoremap <leader>_ 8gt<CR>
+nnoremap <leader>ç 9gt<CR>
+
+nnoremap <c-v> :split<CR>
+nnoremap <c-h> :vsplit<CR>
+
+nnoremap <C-q> <C-w>h
+nnoremap <C-s> <C-w>j
+nnoremap <C-z> <C-w>k
+nnoremap <C-d> <C-w>l
