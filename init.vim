@@ -109,7 +109,13 @@ nnoremap <leader>ç 9gt<CR>
 nnoremap <c-v> :split<CR>
 nnoremap <c-h> :vsplit<CR>
 
+nnoremap <C-z> <C-w>k
 nnoremap <C-q> <C-w>h
 nnoremap <C-s> <C-w>j
-nnoremap <C-z> <C-w>k
 nnoremap <C-d> <C-w>l
+
+" Same with arrows
+nnoremap <C-Up> <C-w>k
+nnoremap <C-Left> <C-w>h
+nnoremap <C-Down> <C-w>j
+nnoremap <C-Right> <C-w>l
