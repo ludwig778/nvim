@@ -33,9 +33,12 @@ set tags=~/.tags
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
+" nnoremap <c-w> :q<CR>
+" nnoremap <c-x> :q!<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>d yyp
 nnoremap <leader>t :tabe<CR>
+nnoremap <c-t> :tabe<CR>
 nnoremap <leader>z :TagbarToggle<CR>
 nnoremap <leader>u :PlugUpdate<CR>
 nnoremap <leader>U :PlugUpgrade<CR>
@@ -60,7 +63,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height=13
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_flake8_exec = 'python3'
+let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 " YOU COMPLETE ME
 "let g:ycm_autoclose_preview_window_after_completion=1
@@ -114,8 +119,24 @@ nnoremap <C-q> <C-w>h
 nnoremap <C-s> <C-w>j
 nnoremap <C-d> <C-w>l
 
+nnoremap <C-z> <C-w>K
+nnoremap <C-q> <C-w>H
+nnoremap <C-s> <C-w>J
+nnoremap <C-d> <C-w>L
+
 " Same with arrows
 nnoremap <C-Up> <C-w>k
 nnoremap <C-Left> <C-w>h
 nnoremap <C-Down> <C-w>j
 nnoremap <C-Right> <C-w>l
+
+" Resize windows
+nmap <c-S-Up> :res +5<CR>
+nmap <c-S-Down> :res -5<CR>
+nmap <c-S-Left> :vertical resize -8<CR>
+nmap <c-S-Right> :vertical resize +8<CR>
+
+nmap <c-S-Z> :res +5<CR>
+nmap <c-S-S> :res -5<CR>
+nmap <c-S-Q> :vertical resize -8<CR>
+nmap <c-S-D> :vertical resize +8<CR>
