@@ -43,7 +43,7 @@ nnoremap <leader>z :TagbarToggle<CR>
 nnoremap <leader>u :PlugUpdate<CR>
 nnoremap <leader>U :PlugUpgrade<CR>
 
-"set number
+set number
 set relativenumber
 set smartindent
 set autoindent
